@@ -13,7 +13,3 @@ class WorkHoursTest {
         assertEquals("John Doe: 2021-01-04", result);
     }
 }
-
-    © 2021 GitHub, Inc.
-            Terms
-            Privacy
