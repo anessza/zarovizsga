@@ -1,4 +1,4 @@
-/*package hu.nive.ujratervezes.zarovizsga;
+package hu.nive.ujratervezes.zarovizsga;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,7 +48,7 @@ public class KennelTest {
                 () -> kennel.findByName("Korom"));
     }
 
-    @Test
+  @Test
     void testPlayWith() {
         kennel.playWith("Morzsi", 4);
         assertEquals(12, kennel.findByName("Morzsi").getHappiness());
@@ -64,4 +64,3 @@ public class KennelTest {
     }
 }
 
- */

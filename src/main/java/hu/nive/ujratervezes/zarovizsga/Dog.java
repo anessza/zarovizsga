@@ -44,5 +44,11 @@ public abstract class Dog {
 
     public abstract void play(int hours);
 
-
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", happiness=" + happiness +
+                '}';
+    }
 }

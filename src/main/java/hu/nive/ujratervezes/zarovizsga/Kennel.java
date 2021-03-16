@@ -1,24 +1,72 @@
-/*package hu.nive.ujratervezes.zarovizsga;
+package hu.nive.ujratervezes.zarovizsga;
+/*
+Legyen egy Kennel osztály, mely nyilvántartja a kutyákat. A következő metódusokat implementáld:
 
+   - void addDog(Dog dog) - hozzáaad egy kutyát
+    -feedAll() - összes kutya feed() metódusát meghívja
+    -Dog findByName(String name) - kikeresi a kutyát név alapján, kivételt dob, ha nem találja
+    -void playWith(String name, int hours) - a paraméterként megadott kutyát kikeresi, és meghívja
+    a play() metódusát az átadott hours paraméterrel
+    -List<String> getHappyDogNames(int minHappiness) - visszaadja azon kutyák neveit,
+    melyeknek boldogsága nagyobb, mint a paraméterként átadott érték
+
+ */
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Kennel {
-    public void addDog(Beagle beagle) {
-    }
+
+    List<Dog> dogs = new ArrayList<>();
 
     public List<Dog> getDogs() {
+        return dogs;
+    }
+
+    public void addDog(Dog dog) {
+        dogs.add(dog);
     }
 
     public void feedAll() {
+        for (Dog dog : dogs) {
+            dog.feed();
+        }
     }
 
-    public Dog findByName(String morzsi) {
+    public Dog findByName(String name) {
+        try {
+            Dog foundDog = null;
+            for (Dog dog : dogs) {
+                if (dog.getName().equals(name)) {
+                    foundDog = dog;
+                }
+            }
+            if (foundDog == null) {
+                throw new IllegalArgumentException("Can't find dog");
+            }
+
+            return foundDog;
+        }
+        catch (Exception e){
+            throw new IllegalArgumentException("Can't find", e);
+        }
     }
 
-    public void playWith(String morzsi, int i) {
+    public void playWith(String name, int hour) {
+       Dog foundDog = findByName(name);
+        foundDog.play(hour);
     }
 
-    public <E> List<E> getHappyDogNames(int i) {
+    public List<String> getHappyDogNames(int happinessRate) {
+        List<String> mostHappinestDogs = new ArrayList<>();
+        for (Dog dog : dogs) {
+            if (dog.getHappiness() > happinessRate) {
+                mostHappinestDogs.add(dog.getName());
+            }
+        }
+        return mostHappinestDogs;
     }
+
 }
-*/
+
+
