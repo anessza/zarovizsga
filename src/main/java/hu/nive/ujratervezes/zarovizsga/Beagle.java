@@ -1,15 +1,18 @@
 package hu.nive.ujratervezes.zarovizsga;
 
-public class Beagle {
-    public String getName() {
+public class Beagle extends Dog{
+
+    public Beagle(String name) {
+        super(name);
     }
 
-    public int getHappiness() {
-    }
-
+@Override
     public void feed() {
+        happiness = this.getHappiness() + 2;
     }
 
-    public void play(int i) {
+@Override
+    public void play(int hour) {
+        happiness = this.getHappiness() + (hour * 2);
     }
 }

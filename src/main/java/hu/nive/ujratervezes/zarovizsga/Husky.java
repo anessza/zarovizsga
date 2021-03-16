@@ -1,15 +1,17 @@
 package hu.nive.ujratervezes.zarovizsga;
 
-public class Husky {
-    public String getName() {
+public class Husky extends Dog {
+    public Husky(String name) {
+        super(name);
     }
 
-    public int getHappiness() {
-    }
-
+@Override
     public void feed() {
+        happiness = this.getHappiness() + 4;
     }
+@Override
+    public void play(int hour) {
+        happiness = this.getHappiness() + (hour * 3);
 
-    public void play(int i) {
     }
 }

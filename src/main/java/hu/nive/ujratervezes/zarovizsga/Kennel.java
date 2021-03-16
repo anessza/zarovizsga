@@ -1,4 +1,4 @@
-package hu.nive.ujratervezes.zarovizsga;
+/*package hu.nive.ujratervezes.zarovizsga;
 
 import java.util.List;
 
@@ -21,3 +21,4 @@ public class Kennel {
     public <E> List<E> getHappyDogNames(int i) {
     }
 }
+*/
